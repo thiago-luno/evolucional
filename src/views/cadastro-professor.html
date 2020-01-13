@@ -1,0 +1,73 @@
+
+<form action="#" class="form-cadastro" name="myform">
+    <h3 class="form-cadastro__title">
+        <i class="fa fa-clone" aria-hidden="true"></i> Novo registro
+    </h3>
+
+    <div id="step-1" class="form-cadastro__content" ng-show="step === 1">
+        <input ng-model="newTeacher.name" class="form-cadastro__input form-cadastro__input--border-blue" type="text" placeholder="Nome do Professor">
+
+        <a class="btn btn--cadastro form-cadastro__link" ng-class="{'btn--disabled' : !newTeacher.name}" ng-click="register(2)">Avançar
+        </a>     
+    </div>
+
+    <div id="step-2"  class="form-cadastro__content" ng-show="step === 2">
+        <h4 class="form-cadastro__sub-title form-cadastro__sub-title--blue">
+            Informe a matéria do Professor
+        </h4>
+
+        <select ng-model="newTeacher.teacherMatter" ng-options="matter as matter.name for matter in matters">
+            <option value="">Escolha a matéria</option>
+        </select>
+
+        <a class="btn btn--cadastro form-cadastro__link" ng-class="{'btn--disabled' : !newTeacher.teacherMatter}" ng-click="register(3)">
+            Avançar
+        </a>
+
+    </div>
+
+    <div id="step-3"  class="form-cadastro__content" ng-show="step === 3">
+        <h4 class="form-cadastro__sub-title form-cadastro__sub-title--blue">
+            Informe a série do Professor
+        </h4>
+
+        <select ng-model="newTeacher.teacherDegree" ng-options="degree as degree.name for degree in degrees">
+            <option value="">Escolha a série</option>
+        </select>
+
+        <a class="btn btn--cadastro form-cadastro__link" ng-class="{'btn--disabled' : !newTeacher.teacherDegree}" ng-click="register(4)">Avançar
+        </a>
+
+    </div>
+
+    <div id="step-4" ng-show="step === 4">
+        <h4 class="form-cadastro__sub-title form-cadastro__sub-title--blue">
+            Assinale as classes do professor
+        </h4>
+
+        <label ng-repeat="class in classes track by $index">
+            <input
+            id="classOption{{class.id}}"
+            type="checkbox"
+            ng-model="class.selected"> 
+                {{class.name}} 
+
+            <a class="btn btn--cadastro form-cadastro__link" ng-class="{'btn--disabled' : !hasActive()}" ng-click="register(5)">
+                Avançar
+            </a>
+        </label>
+
+
+    </div>
+
+    <div id="step-5" ng-show="step === 5">
+       
+        <a class="btn btn--add" ng-click="clearClasses();register(3)">
+            <i class="fa fa-plus-circle" aria-hidden="true"> </i> Adicionar outra série ao professor
+        </a>
+        
+        <a class="btn btn--cadastro form-cadastro__link" ng-click="saveRegister()">
+            Finalizar Cadastro
+        </a>
+    </div>
+</form>

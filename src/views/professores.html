@@ -1,0 +1,62 @@
+<h2 class="title-main">Professores</h2>
+
+<div class="overlay" ng-show="showOverlay">
+    <i class="fa fa-times btn btn--close overlay__icon-close" aria-hidden="true" ng-click="showOverlay=false"></i>
+    
+    <form-teacher></form-teacher>
+</div>
+
+<select-degrees></select-degrees>
+
+<select-classes></select-classes>
+
+<button ng-click="getStudentsDegree(degreeSelect.id)" class="btn btn--add" ng-show="degreeSelect">
+    <i class="fa fa-plus-circle" aria-hidden="true"></i> Estudantes dessa série
+</button>
+
+<button class="btn btn--add" style="float: right;" ng-click="register(1);clearRegister()">
+    <i class="fa fa-plus-circle" aria-hidden="true"></i> Incluir novo registro
+</button>
+
+<ul class="list-students" ng-show="studentDegree.length > 0">
+    <li class="list-students__item" ng-repeat="student in studentDegree">
+        <img class="list-students__avatar" src="img/avatar_1.png" alt="avatar">
+        <span class="list-students__link">{{student.name}} | RA:{{student.ra}}</span>
+    </li>
+</ul>
+
+<table class="dynamic-table" ng-cloak>
+    
+    <thead>
+
+        <tr>
+            <td>Nome {{degreeSelect.id}}</td>
+            <td>Matéria</td>
+            <td>Séries e Classes</td>
+        </tr>
+
+    </thead>
+
+    <tbody ng-repeat="teacher in teachers | search : degreeSelect : classesSelect track by $index">
+
+        <tr>
+            <td>{{teacher.name}}</td>
+
+            <td>{{teacher.matter}}</td>
+
+           
+            <td>
+                <div ng-repeat="degree in teacher.degrees">
+
+                    <span class="line-break"> 
+                        {{degree.degreeName}}
+                    </span>                     
+                    <span class="tag" ng-repeat="class in degree.classes">
+                        {{class.className}}
+                    </span>
+                </div>
+            </td>         
+        </tr>
+    </tbody>
+</table>
+

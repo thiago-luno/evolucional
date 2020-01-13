@@ -1,0 +1,58 @@
+.form-cadastro {
+    display: flex;
+    padding: 20px;
+    margin-top: 20px;
+    flex-direction: column;
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+         
+    }
+
+    &__title {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+    }
+
+    &__sub-title {
+        font-size: 14px;
+        margin-bottom: 10px;
+
+        &--blue {
+            color: $cerulean;
+        }
+    }
+
+    &__input {
+        border:none;
+        outline: none;
+        padding: 10px;
+        transition: all .1s ease-in;
+
+        // &:focus {
+        //     border-bottom: 2px solid $endeavour; 
+        // }
+        
+        &--border-blue {
+            border-bottom: 1px solid $endeavour;
+        }
+    }
+
+    &__link {
+        text-align: center;
+        position: absolute;
+        bottom: 15px;
+        right: 20px;
+    }
+    
+    select {
+        padding: 5px;
+    }
+}

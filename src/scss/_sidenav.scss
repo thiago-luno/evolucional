@@ -1,0 +1,47 @@
+.sidenav {
+    display: flex;
+    grid-area: sidenav;
+    position: fixed;
+    width: 170px;
+    height: 100%;
+    flex-direction: column;
+    background-color: $cerulean;
+    // transform: translateX(-245px);
+    box-shadow: 1px 1px 9px 0px #00000042;
+    transition: all .4s ease-out;
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        margin-top: 50px;
+        list-style-type: none;
+    }
+   
+    &__list-item {
+        color: #fff;
+        display: flex;
+        align-items: center;
+    }
+
+    &__icon {
+        width: 30px;
+        padding-right: 10px;
+    }
+
+    &__link {
+        display: flex;
+        text-decoration: none;
+        padding: 10px;
+        font-size: .9rem;
+        cursor: pointer;
+        transition: all .2s ease-out;
+
+        &:hover{
+            background-color: lighten($endeavour, 3%);
+        }
+    }
+}
+
+.active { 
+    background-color: $endeavour;
+}

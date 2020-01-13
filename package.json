@@ -1,0 +1,24 @@
+{
+  "name": "teste-front-end-evolucional",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.0"
+  },
+  "dependencies": {
+    "browser-sync": "^2.26.7",
+    "connect-history-api-fallback": "^1.6.0",
+    "csslint": "^1.0.5",
+    "gulp-csslint": "^1.0.1",
+    "gulp-jshint": "^2.1.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-usemin": "^0.3.30",
+    "jshint": "^2.11.0-rc1"
+  }
+}

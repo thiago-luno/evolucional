@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <base href="/">
+    <title>Teste Front-end Evolucional</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="grid-container">
+
+        <header class="header">
+            <div class="header__left">
+                <i class="fa fa-list" aria-hidden="true"></i>
+                <h2 class="header__title"">Relatórios</h2>
+            </div>
+        
+
+            <a href="www.linkedin.com/in/thiago-luis-nunes-25b657121" target="_self" class="header__social">
+                <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+            </a>
+        </header>
+
+        <nav class="sidenav" ng-controller="menu">
+            <div class="brand">
+                <img src="img/logo-evolucional.png" alt="evolucional">
+            </div>
+            <ul class="sidenav__list">
+                <a href="/alunos"  class="sidenav__link" ng-class="getClass('/alunos')">
+                    <li class="sidenav__list-item">
+                        <img class="sidenav__icon" src="img/student.svg" alt="estudante">
+                    Alunos
+                    </li>
+                </a>
+
+                <a href="/professores"  class="sidenav__link" ng-class="getClass('/professores')">
+                    <li class="sidenav__list-item">
+                        <img class="sidenav__icon" src="img/teacher.svg" alt="estudante">
+                    Professores
+                    </li>
+                </a>
+            </ul>
+        </nav>
+
+        <main class="main" ng-view></main>
+
+    </div>
+</body>
+
+    <script src="js/app/vendor/angular.min.js"></script>
+    <script src="js/app/vendor/angular-route.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-google-chart/1.0.0-beta.1/ng-google-chart.js" type="text/javascript"></script>
+    <script src="js/app/app.js"></script>
+    <script src="js/app/controllers/estudanteCtrl.js"></script>
+    <script src="js/app/controllers/professoresCtrl.js"></script>
+    <script src="js/app/app.routes.js"></script>
+    <script src="js/app/directives/directives.js"></script>
+    <script src="js/app/factory/serverAPI.js"></script>
+    <script src="js/app/filters/filters.js"></script>
+</html>

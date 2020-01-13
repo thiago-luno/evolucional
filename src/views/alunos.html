@@ -1,0 +1,73 @@
+<h2 class="title-main">Alunos</h2>
+
+<select-degrees></select-degrees>
+
+<select-classes></select-classes>
+
+<button ng-click="addStudents(300);" class="btn btn--add">
+    <i class="fa fa-plus-circle" aria-hidden="true"></i> Incluir estudantes
+</button>
+
+<table class="dynamic-table">
+    
+    <thead>
+
+        <tr>
+            <td>RA</td>
+            <td>Nome</td>
+            <td>Classe</td>
+            <td>Série</td>
+        </tr>
+
+    <tbody>
+
+        <tr ng-repeat="d in students | filter: { degreeId: degreeSelect.id }:true | filter: { classId: classesSelect.id }:true">
+ 
+            <td>
+                {{d.ra}}
+            </td>
+
+            <td>
+                <div class="dynamic-table__content-input">
+
+                    <input ng-model="d.name" class="dynamic-table__input" id="name{{$index}}" ng-class="{'disable-input':!d.editName}" type="text" ng-blur="cancelEdit($index, 'name')"/>
+
+                    <i  class="dynamic-table__icon-check dynamic-table__icon-check--color-shamrock fa fa-check" aria-hidden="true" ng-mousedown="changeStudentData(d.name, $index, 'name')" ng-show="d.editName" ></i>
+
+                    <i class="dynamic-table__icon-edit dynamic-table__icon-edit--color-cerulean fa fa-pencil" aria-hidden="true" ng-click="editMode($index, 'name')"></i>
+                   
+                </div>
+
+            </td>
+
+            <td>
+                <div class="dynamic-table__content-input">
+
+                    <select id="className{{$index}}" ng-model="d.className" ng-class="{'disable-input':!d.editClass}" ng-blur="cancelEdit($index, 'className')"  ng-change="teste()">
+                        <option ng-selected="{{d.className}}"
+                        ng-repeat="class in classes"
+                        value="{{class.name}}">
+                            {{class.name}}
+                        </option>
+
+                    </select>
+
+                    <i class="dynamic-table__icon-check dynamic-table__icon-check--color-shamrock fa fa-check" aria-hidden="true" ng-show="d.editClass" ng-mousedown="changeStudentData(d.className, $index, 'className')"></i>
+
+                    <i class="dynamic-table__icon-edit dynamic-table__icon-edit--color-cerulean fa fa-pencil" aria-hidden="true" ng-click="editMode($index, 'className')"></i>
+                </div>
+
+            </td>
+
+            <td>
+                <div class="dynamic-table__content-input">
+
+                    <input  ng-model="d.degreeName" class="dynamic-table__input" id="degreeName{{$index}}" ng-class="{'disable-input':!d.editDegree}" type="text" ng-blur="cancelEdit($index, 'degreeName')"/> 
+                    
+                </div>
+            </td>
+  
+        </tr>
+    </tbody>
+</table>
+<div google-chart chart="myChartObject" style="height:300px; width:100%;"></div>

@@ -1,4 +1,33 @@
+# Como rodar
+
 - npm install
 - gulp server
 
 profit
+
+--------------
+# Sobre as tarefas tela 1 (students)
+
+## Parte 1
+- Criar combo de filtro a base dos JSONs 'degrees','classes' -> DONE
+- Popular a tela com as informações de students e suas relações (trazendo nome do degree, nome do class) -> DONE
+- Dar opção para editar o nome dos students e a class atribuida ao mesmo -> DONE
+- Filtrar conforme combo sempre levando em consideração os dados pós-alteração -> DONE
+
+## Parte 2
+- Criar botão que gera mais 300 students e os distribuí entre os degrees e classes -> DONE
+- Gerar gráfico com a quantidade de students por degree -> DONE
+Nota: A cada clique no botão serão gerados + 300 students e o gráfico deverá ser atualizado -> DONE
+
+
+# Sobre as tarefas tela 1 (teachers)
+
+## Parte 1
+- Criar combo filtro a base dos JSONs 'degrees','classes' -> DONE
+- Popular a tela utilizando o JSON relationships. Nessa tela será necessária a visualização os seguintes itens:nome do professor, nome da materia, todos os nomes dos degrees relacionados, todos os nomes de classe de cada class relacionada ao degree -> DONE
+- Criar botão que ao clicar, trás os students relacionados ao degree em questão -> DONE
+## Parte 2
+- Criar formulário para gerar um novo registro do relationships. O registro deverá ser passivel as operações da parte 1 da tela 2 -> DONE
+
+Todas as tarefas concluídas com sucesso!
+
